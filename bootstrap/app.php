@@ -81,12 +81,12 @@ $app->configure('app');
 // ]);
 
 $app->middleware([
-    Fruitcake\Cors\HandleCors::class,
+    \Fruitcake\Cors\HandleCors::class,
 ]);
 
 
 // CORS
-$app->register(Fruitcake\Cors\CorsServiceProvider::class);
+$app->register(\Fruitcake\Cors\CorsServiceProvider::class);
 
 
 /*

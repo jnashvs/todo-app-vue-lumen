@@ -36,7 +36,7 @@ return [
     /*
      * Patterns that can be used with `preg_match` to match the origin.
      */
-    'allowed_origins_patterns' => [],
+    'allowed_origins_patterns' => ['*'],
 
     /*
      * Sets the Access-Control-Allow-Headers response header. `['*']` allows all headers.
