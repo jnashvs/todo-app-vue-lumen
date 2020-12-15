@@ -88,7 +88,16 @@ $app->middleware([
 // CORS
 $app->register(\Fruitcake\Cors\CorsServiceProvider::class);
 
+// PACKAGE JWT
+$app->routeMiddleware([
+    'auth' => App\Http\Middleware\Authenticate::class,
+]);
 
+$app->register(App\Providers\AuthServiceProvider::class);
+// $app->register(App\Providers\EventServiceProvider::class);
+
+// Add this line
+$app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers

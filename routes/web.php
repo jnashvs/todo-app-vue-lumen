@@ -12,11 +12,15 @@
 */
 
 
-$router->group(['prefix'=>'api'], function() use($router){
+$router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('/tasks', 'TasksController@index');
     $router->post('/task', 'TasksController@create');
     $router->get('/task/{id}', 'TasksController@show');
     $router->put('/task/{id}', 'TasksController@update');
     $router->delete('/task/{id}', 'TasksController@destroy');
-});
 
+    $router->post('register', 'AuthController@register');
+
+    // Matches "/api/login
+    $router->post('login', 'AuthController@login');
+});

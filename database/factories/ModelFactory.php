@@ -1,9 +1,10 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-
+use Illuminate\Support\Facades\Hash;
 use Faker\Generator as Faker;
 use App\Models\Tasks;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,10 @@ use App\Models\Tasks;
 |
 */
 
-$factory->define(Tasks::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker) {
     return [
-        'title' => $faker->name, 
-        'subtitle' => $faker->name, 
-        'action'=> rand(200,300), 
-        'completed'=> rand(0,1)
+        'name'     => $faker->name,
+        'email'    => $faker->unique()->email,
+        'password' => Hash::make('12345'),
     ];
 });

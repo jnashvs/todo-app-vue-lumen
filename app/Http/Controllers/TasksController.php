@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Tasks;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class TasksController extends Controller
@@ -12,8 +14,10 @@ class TasksController extends Controller
 
    public function __construct(Tasks $tasks)
    {
+      //$this->middleware('auth');
       $this->tasks = $tasks;
    }
+   
    /**
     * Create a new controller instance.
     *
