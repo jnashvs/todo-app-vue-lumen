@@ -62,5 +62,10 @@ class AuthController extends Controller
         return $this->respondWithToken($token);
     }
 
+    public function isValidToken(Request $request)
+    {
+        return response()->json(['valid' => auth()->check()]);
+    }
+
 
 }

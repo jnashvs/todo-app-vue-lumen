@@ -21,6 +21,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->post('register', 'AuthController@register');
 
+    $router->get('/isvalidtoken', 'AuthController@isValidToken');
+
     // Matches "/api/login
     $router->post('login', 'AuthController@login');
 });
